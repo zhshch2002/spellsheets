@@ -1,7 +1,12 @@
+_output
 _site
+.idea/
 .sass-cache
 .cache
 .jekyll-cache
 .jekyll-metadata
-vendor
+/vendor
 node_modules
+
+/_includes/2017/critical/*
+/assets/packed/*
