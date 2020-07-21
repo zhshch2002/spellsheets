@@ -4,7 +4,7 @@
   "description": "a modest collection of cheatsheets.",
   "author": "zhshch2002",
   "main": "index.js",
-  "license": "CC BY-NC-SA 4.0",
+  "license": "CC-BY-NC-SA-4.0",
   "private": false,
   "dependencies": {
     "autoprefixer": "^9.8.2",
