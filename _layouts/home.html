@@ -1,5 +1,5 @@
 <!doctype html>
-<html class='NoJs' lang='en'><head>
+<html class='NoJs'><head>
 
 {% assign featured_pages = site.pages
   | where_exp: "page", "page.tags contains 'Featured'"
@@ -65,7 +65,7 @@
     <div class='message item missing-message'>
       <h3>See something missing?</h3>
       <p>
-        <a class='push-button' href='{{ site.github.repository_url }}/issues/907'>Request cheatsheet</a>
+        <a class='push-button' href='{{ site.github.repository_url }}/issues/'>Request cheatsheet</a>
       </p>
     </div>
   </div>
