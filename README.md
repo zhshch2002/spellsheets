@@ -12,8 +12,8 @@
 * 原有条目翻译（2/337）
   * [x] [bash.md](https://spellsheets.com/bash)
   * [x] [go.md](https://spellsheets.com/go)
+  * [x] [docker.md](https://spellsheets.com/docker)
   * [ ] [docker-compose.md](https://spellsheets.com/docker-compose)
-  * [ ] [docker.md](https://spellsheets.com/docker)
   * [ ] [dockerfile.md](https://spellsheets.com/dockerfile)
   * [ ] [git-branch.md](https://spellsheets.com/git-branch)
   * [ ] [git-extras.md](https://spellsheets.com/git-extras)
