@@ -2,6 +2,8 @@
 title: Docker CLI
 category: Devops
 layout: sheet
+updated: 2020-07-22
+tags: [Featured]
 ---
 
 Manage images
@@ -11,11 +13,11 @@ Manage images
 
 ```yml
 docker build [options] .
-  -t "app/container_name"    # name
+  -t "app/container_name"    # 名称
   --build-arg APP_HOME=$APP_HOME    # Set build-time variables
 ```
 
-Create an `image` from a Dockerfile.
+从Dockerfile构建镜像。
 
 
 ### `docker run`
@@ -30,7 +32,7 @@ docker run [options] IMAGE
 ```
 $ docker run -it debian:buster /bin/bash
 ```
-Run a command in an `image`.
+创建Docker容器并执行命令。
 
 Manage containers
 -----------------
@@ -43,13 +45,14 @@ docker create [options] IMAGE
   -i, --interactive          # attach stdin (interactive)
   -t, --tty                  # pseudo-tty
       --name NAME            # name your image
-  -p, --publish 5000:5000    # port map
-      --expose 5432          # expose a port to linked containers
-  -P, --publish-all          # publish all ports
-      --link container:alias # linking
-  -v, --volume `pwd`:/app    # mount (absolute paths needed)
-  -e, --env NAME=hello       # env vars
+  -p, --publish 5000:5000    # 端口映射
+      --expose 5432          # 为容器间链接暴露端口
+  -P, --publish-all          # 对外暴露全部端口
+      --link container:alias # 连接另一个镜像
+  -v, --volume `pwd`:/app    # 挂载文件系统
+  -e, --env NAME=hello       # 传入环境变量
 ```
+
 
 #### Example
 
@@ -59,15 +62,15 @@ $ docker create --name app_redis_1 \
   redis:3.0.2
 ```
 
-Create a `container` from an `image`.
+从镜像创建容器但不启动。
 
 ### `docker exec`
 
 ```yml
 docker exec [options] CONTAINER COMMAND
-  -d, --detach        # run in background
-  -i, --interactive   # stdin
-  -t, --tty           # interactive
+  -d, --detach        # 后台运行
+  -i, --interactive   # 链接stdin
+  -t, --tty           # 可交互
 ```
 
 #### Example
@@ -77,7 +80,7 @@ $ docker exec app_web_1 tail logs/development.log
 $ docker exec -t -i app_web_1 rails c
 ```
 
-Run commands in a `container`.
+在容器中执行命令。
 
 
 ### `docker start`
@@ -90,30 +93,23 @@ docker start [options] CONTAINER
 docker stop [options] CONTAINER
 ```
 
-Start/stop a `container`.
-
-
 ### `docker ps`
 
 ```
-$ docker ps
-$ docker ps -a
-$ docker kill $ID
+$ docker ps        # 列出容器
+$ docker ps -a     # 列出全部容器（包括停止的）
+$ docker kill $ID  # 销毁容器
 ```
-
-Manage `container`s using ps/kill.
-
 
 ### `docker logs`
 
 ```
 $ docker logs $ID
 $ docker logs $ID 2>&1 | less
-$ docker logs -f $ID # Follow log output
+$ docker logs -f $ID   # 持续输出最新日志
 ```
 
-See what's being logged in an `container`.
-
+查看容器的日志输出。
 
 Images
 ------
@@ -128,10 +124,8 @@ $ docker images
 ```
 
 ```sh
-$ docker images -a   # also show intermediate
+$ docker images -a   # 也显示中间镜像
 ```
-
-Manages `image`s.
 
 ### `docker rmi`
 
@@ -139,23 +133,23 @@ Manages `image`s.
 docker rmi b750fe78269d
 ```
 
-Deletes `image`s.
+删除镜像。
 
-## Clean up
+## 清理
 
-### Clean all
+### 全部清理
 
 ```sh
 docker system prune
 ```
 
-Cleans up dangling images, containers, volumes, and networks (ie, not associated with a container)
+清理镜像，容器，卷和网络（即未被容器使用的资源）。
 
 ```sh
 docker system prune -a
 ```
 
-Additionally remove any stopped containers and all unused images (not just dangling images)
+删除所有停止的容器和所有未使用的镜像（不未被容器使用的镜像）。
 
 ### Containers
 
@@ -173,7 +167,7 @@ docker container prune
 docker image prune [-a]
 ```
 
-Delete all the images
+删除全部镜像。
 
 ### Volumes
 
@@ -181,7 +175,7 @@ Delete all the images
 docker volume prune
 ```
 
-Delete all the volumes
+删除全部卷。
 
 Also see
 --------

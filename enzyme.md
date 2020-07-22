@@ -3,7 +3,6 @@ title: Enzyme
 category: React
 layout: sheet
 updated: 2020-02-12
-tags: [Featured]
 weight: -1
 keywords:
   - shallow()
