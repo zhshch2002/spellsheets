@@ -1,19 +1,20 @@
 # Spellsheets (咒语速查 误)
 一个汉化自[https://devhints.io/](https://devhints.io/)的，中文本土化的速查表。
 
-# 当前进度
+# 当前进度(TODO)
 大约 0.1%
 
 翻译的进度和顺序可能会依照我的熟悉程度和使用频度进行调整。如果你愿意做出贡献，赶紧，发一个PR就上吧！
-
+* [ ] 图标
 * 本土化
-  * 添加各类镜像的条目
-  * 加速访问速度
-* 原有条目翻译（2/337）
+  * [ ] 添加各类镜像的条目
+  * [ ] 加速访问速度
+  * [ ] 评论功能
+* 原有条目翻译（3/337）
   * [x] [bash.md](https://spellsheets.com/bash)
   * [x] [go.md](https://spellsheets.com/go)
   * [x] [docker.md](https://spellsheets.com/docker)
-  * [ ] [docker-compose.md](https://spellsheets.com/docker-compose)
+  * [x] [docker-compose.md](https://spellsheets.com/docker-compose)
   * [ ] [dockerfile.md](https://spellsheets.com/dockerfile)
   * [ ] [git-branch.md](https://spellsheets.com/git-branch)
   * [ ] [git-extras.md](https://spellsheets.com/git-extras)
