@@ -7,11 +7,11 @@ weight: -1
 updated: 2020-01-01
 ---
 
-### Basic example
+### 例子
 
 ```yaml
 # docker-compose.yml
-version: '2'
+version: '3'
 
 services:
   web:
@@ -27,7 +27,7 @@ services:
     image: redis
 ```
 
-### Commands
+### 控制台命令
 
 ```sh
 docker-compose start
@@ -48,11 +48,11 @@ docker-compose down
 ## Reference
 {: .-three-column}
 
-### Building
+### 构建
 
 ```yaml
 web:
-  # build from Dockerfile
+  # 从 Dockerfile 构建
   build: .
   args:     # Add build arguments
     APP_HOME: app
@@ -66,7 +66,7 @@ web:
 ```
 
 ```yaml
-  # build from image
+  # 使用现有镜像
   image: ubuntu
   image: ubuntu:14.04
   image: tutum/influxdb
@@ -74,7 +74,7 @@ web:
   image: a4bc65fd
 ```
 
-### Ports
+### 端口映射
 
 ```yaml
   ports:
@@ -83,25 +83,25 @@ web:
 ```
 
 ```yaml
-  # expose ports to linked services (not to host)
+  # 向其他容器暴露端口（不是向宿主）
   expose: ["3000"]
 ```
 
 ### Commands
 
 ```yaml
-  # command to execute
+  # 执行命令
   command: bundle exec thin -p 3000
   command: [bundle, exec, thin, -p, 3000]
 ```
 
 ```yaml
-  # override the entrypoint
+  # 覆盖 entrypoint
   entrypoint: /app/start.sh
   entrypoint: [php, -d, vendor/bin/phpunit]
 ```
 
-### Environment variables
+### 环境变量
 
 ```yaml
   # environment vars
@@ -117,18 +117,18 @@ web:
   env_file: [.env, .development.env]
 ```
 
-### Dependencies
+### 依赖
 
 ```yaml
   # makes the `db` service available as the hostname `database`
-  # (implies depends_on)
+  # (包含 depends_on)
   links:
     - db:database
     - redis
 ```
 
 ```yaml
-  # make sure `db` is alive before starting
+  # 在`db`启动后启动
   depends_on:
     - db
 ```
@@ -136,7 +136,7 @@ web:
 ### Other options
 
 ```yaml
-  # make this service extend another
+  # 引入其他文件中的配置
   extends:
     file: common.yml  # optional
     service: webapp
@@ -148,7 +148,7 @@ web:
     - ./_data:/var/lib/mysql
 ```
 
-## Advanced features
+## 高级特性
 {: .-three-column}
 
 ### Labels
@@ -160,18 +160,18 @@ services:
       com.example.description: "Accounting web app"
 ```
 
-### DNS servers
+### DNS
 
 ```yaml
 services:
   web:
     dns: 8.8.8.8
-    dns:
-      - 8.8.8.8
-      - 8.8.4.4
+    # dns:
+    #   - 8.8.8.8
+    #   - 8.8.4.4
 ```
 
-### Devices
+### 设备
 
 ```yaml
 services:
@@ -180,7 +180,7 @@ services:
     - "/dev/ttyUSB0:/dev/ttyUSB0"
 ```
 
-### External links
+### 外部链接
 
 ```yaml
 services:
@@ -189,6 +189,8 @@ services:
       - redis_1
       - project_db_1:mysql
 ```
+
+外部链接用于连接不是在一个`docker-compose.yml`文件内创建的容器。
 
 ### Hosts
 
@@ -199,10 +201,12 @@ services:
       - "somehost:192.168.1.100"
 ```
 
+向容器的`hosts`文件追加。
+
 ### Network
 
 ```yaml
-# creates a custom network called `frontend`
+# 创建一个自定义Network `frontend`
 networks:
   frontend:
 ```
@@ -210,7 +214,7 @@ networks:
 ### External network
 
 ```yaml
-# join a pre-existing network
+# 加入已经存在的Network
 networks:
   default:
     external:
@@ -220,7 +224,7 @@ networks:
 ### Volume
 
 ```yaml
-# Mount host paths or named volumes, specified as sub-options to a service
+# 挂载宿主机目录或命名卷
   db:
     image: postgres:latest
     volumes:
