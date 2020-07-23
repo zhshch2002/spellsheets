@@ -10,7 +10,7 @@
   * [ ] 添加各类镜像的条目
   * [ ] 加速访问速度
   * [ ] 评论功能
-* 原有条目翻译（3/337）
+* 原有条目翻译（4/337）
   * [x] [bash.md](https://spellsheets.com/bash)
   * [x] [go.md](https://spellsheets.com/go)
   * [x] [docker.md](https://spellsheets.com/docker)
