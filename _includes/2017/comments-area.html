@@ -1,4 +1,4 @@
-{% assign identifier = include.page.url | remove: '.html' | remove_first: '/' %}
+{% assign identifier = include.page.url | remove_first: '/' %}
 {% if site.data.disqus.enabled %}
   <section class='comments-area' id='comments' data-js-no-preview>
     <div class='container'>
