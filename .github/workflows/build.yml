@@ -31,7 +31,7 @@ jobs:
         uses: saltbo/uptoc@master
         with:
           driver: qiniu
-          region: s3-cn-south-1
+          region: cn-south-1
           bucket: spellsheets
           # exclude: .cache,test
           dist: _site
